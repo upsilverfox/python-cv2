@@ -1,0 +1,12 @@
+#jupyter 打开后无法直接跳转到浏览器
+1、首先打开Anoconda Prompt，输入命令 jupyter notebook --generate-config，系统会自动产生一个名为jupyter_notebook_config.py的文件，并且Anoconda Prompt窗口中会给出文件的路径。
+2、打开jupyter_notebook_config.py，在文件最后添加以下代码
+
+# c.NotebookApp.browser = ''
+import webbrowser
+webbrowser.register('chrome',None,webbrowser.GenericBrowser(u'C:\ProgramFiles(x86)\Google\Chrome\Application\chrome.exe'))
+c.NotebookApp.browser = 'chrome'
+
+其中C:\Program Files (x86)\Google\Chrome\Application\chrome.exe，这是你想要使用的浏览器路径，可通过右键点击浏览器快捷方式查看属性得到，chrome是你的浏览器名称，可修改，修改完成后，再次打开Jupyter Notebook，则自动打开浏览器编辑窗口
+
+#最重要的一点是如果你使用的浏览器例如为msedge.exe无论你如何努力都不会有结果因为jupyter notebook不支持 哈哈哈傻了吧我也被坑过

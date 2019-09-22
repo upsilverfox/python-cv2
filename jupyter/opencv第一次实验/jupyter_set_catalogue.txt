@@ -1,0 +1,7 @@
+选中jupyter右击属性后修改：
+
+1、目标：在C:\...\jupyter-notebook-script.py 与 %USERPROFILE%之间加入要默认的目录地址，如 E:\jupyter（两边加空格）
+
+2、 起始位置改为：E:\jupyter （为你的存储的位置）
+
+然后点击应用，并确定。就可以了
